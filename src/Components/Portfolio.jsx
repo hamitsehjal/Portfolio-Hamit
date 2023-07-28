@@ -19,7 +19,7 @@ import React from "react";
  * Need an image? Check out https://unsplash.com to download a photo you
  * freely use on your site.
  */
-import image from "../images/design-desk.jpeg";
+import image from "../images/software.jpg";
 
 const imageAltText = "desktop with books and laptop";
 
@@ -31,28 +31,27 @@ const imageAltText = "desktop with books and laptop";
  */
 const projectList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
+    title: "Metropolitan Museum of Art  🎉",
     description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+      "This is a modern, responsive user solution for searching and viewing data on the publicly available Metropolitan Museum of Art Collection API",
+    url: "https://met-museum-422.vercel.app/",
   },
   {
     title: "Web Development for Beginners",
-    description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+    description: "Created a projects collection for Beginners learning Web Development.",
+    url: "https://github.com/hamitsehjal/WebDev-v3",
   },
   {
-    title: "My Resume Site",
+    title: "Random Numbers in Java",
     description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+      "Published a Blog on HashNode for how to work with Random Number in Java using 4 different ways.",
+    url: "https://hamitblogs.hashnode.dev/how-to-generate-random-numbers-in-java",
   },
   {
-    title: "GitHub Codespaces and github.dev",
+    title: "Utility Bill Calculator",
     description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+      "A cross-platform mobile application using Microsoft Xamarin for calculating utility bills.",
+    url: "https://github.com/hamitsehjal/Utility-Bill-Calculator",
   },
 ];
 
