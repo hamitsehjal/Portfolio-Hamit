@@ -6,7 +6,6 @@
  */
 
 import React from "react";
-import arrowSvg from "../images/down-arrow.svg";
 import PropTypes from "prop-types";
 
 /**
@@ -27,16 +26,27 @@ const imageAltText =
 
 const Home = ({ name, title }) => {
   return (
-    <section id="home" className="min-height">
-      <img className="background" src={image} alt="" />
-      <div style={{ position: "absolute", top: "5rem", left: "2rem", width: "17rem" }}>
-        <h1>{name}</h1>
-        <h2>{title}</h2>
+    <div className="w-screen h-screen text-white">
+      <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <img
+          className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center"
+          alt={imageAltText}
+          src={image}
+        />
+        <div className="text-center lg:w-5/12 w-full text-black">
+          <p className="text-2xl mb-8">Hi, my name is {name}.</p>
+          <h1 className="my-4 text-5xl font-bold leading-tight ">I&apos;m a {title}</h1>
+          <div className="flex justify-center mx-auto">
+            <button className="hover:underline bg-white text-gray-800 font-bold border rounded-full py-4 px-8">
+              View Projects
+            </button>
+            <button className="ml-4 hover:underline bg-white text-gray-800 font-bold  border rounded-full py-4 px-8">
+              Get in Touch
+            </button>
+          </div>
+        </div>
       </div>
-      <div style={{ position: "absolute", bottom: "3rem", left: "50%" }}>
-        <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
-      </div>
-    </section>
+    </div>
   );
 };
 
