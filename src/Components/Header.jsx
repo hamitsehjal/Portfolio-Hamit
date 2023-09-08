@@ -14,7 +14,7 @@ const Header = () => {
         <img
           src={image}
           alt="My Logo"
-          className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48" />
+          className="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40" />
       </div>
       <div className="flex flex-wrap md:ml-auto md:mr-auto items-center text-base justify-center">
         <a className="mr-5" href="#home">
