@@ -35,7 +35,7 @@ const projectList = [
 
 const Portfolio = () => {
   return (
-    <div className="container mx-auto text-center">
+    <div className="container mx-auto text-center" id="projects">
       <h2 className="text-4xl font-semibold text-center text-gray-700">PROJECTS</h2>
 
       <div className="flex flex-wrap items-center justify-center m-2">
