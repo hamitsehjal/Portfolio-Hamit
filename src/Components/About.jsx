@@ -5,81 +5,80 @@
  */
 
 import React from "react";
+import { Carousel, Card } from 'flowbite-react';
+const skillsList = {
+  // applications: [
+  //   "System Design and Architecture",
+  //   "Web Technologies",
+  //   "Database Management",
+  //   "Cloud Computing",
+  //   "Mobile Solutions",
+  //   "Software Testing",],
+  languages: [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "C++/C",
+    "Java",
+    "C#",
+    "Bash",
+    "CSS",
+    "HTML"
+  ],
+  tools: [
+    "Git",
+    "React JS",
+    "Next JS",
+    "ASP.NET",
+    "Amazon Web Services(AWS)",
+    "Dockers",
+    "Xamarin",
+    "Ionic",
+    "Android Studio",
+    "Tailwind CSS",
+    "Jest"
+  ],
+  databases: [
+    "MongoDB",
+    "Oracle SQL",
+    "Microsoft SQL Server"
+  ]
 
-/**
- * About background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that
- * represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a image you
- * freely use on your site.
- */
-import image from "../images/motion-background.jpg";
+};
 
-const imageAltText = "purple and blue abstract background";
 
-/**
- * Sort description that expands on your title on the Home component.
- */
-const description =
-  "I am a Software Engineer with a passion for creating efficient solutions to complex problems.";
-
-/**
- * List of some of skills or technologies you work on, are learning,
- * passionate about, or enjoy,
- */
-const skillsList = [
-  "System Design and Architecture",
-  "Web Technologies",
-  "Database Management",
-  "Cloud Computing",
-  "Mobile Solutions",
-  "Testing and Test-Driven Development",
-];
-
-/**
- * Use this to give more information about what you are passionate about,
- * how you best work, or even a quote. This will help someone learn more
- * about you on a professional level.
- */
-const detailOrQuote =
-  "I am currently studying Computer Science at Seneca PolyTechnic in Toronto. Passionate about designing and developing efficient software solutions, I excel in creating seamless user experiences and driving impactful results. With a strong technical background and a knack for problem-solving, I strive to deliver high-quality applications that meet the needs of modern businesses.";
 
 const About = () => {
   return (
-    <section className="padding" id="about">
-      <img className="background" src={image} alt={imageAltText} />
-      <div
-        style={{
-          backgroundColor: "white",
-          width: "50%",
-          padding: "4rem",
-          margin: "3rem auto",
-          textAlign: "center",
-        }}
-      >
-        <h2>About Myself</h2>
-        <p className="large">{description}</p>
-        <hr />
-        <ul
-          style={{
-            textAlign: "left",
-            columns: 2,
-            fontSize: "1.25rem",
-            margin: "2rem 3rem",
-            gap: "3rem",
-          }}
-        >
-          {skillsList.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
-        <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+
+    <div className="container mx-auto mt-10 text-center" id="about">
+      <h2 className="text-4xl font-semibold text-center text-gray-700">SKILLS</h2>
+      <div className="flex flex-wrap flex-col items-center justify-center m-2">
+        {
+          Object.keys(skillsList).map((item) => (
+            <div key={item}>
+
+              {/* <ul className="grid grid-cols-2 text-xl m-12 gap-2 text-center"> */}
+              <Card className="w-full mb-2 items-start">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 capitalize">
+                  <p>{item}</p>
+                </h5>
+                <ul className="flex">
+                  {
+                    skillsList[item].map((skill, index) => (
+                      <li className="mr-4" key={index}>{skill}</li>
+                    ))
+                  }
+                </ul>
+              </Card>
+              {/* </ul> */}
+
+            </div>
+          ))
+        }
       </div>
-    </section>
+
+    </div>
   );
 };
 
