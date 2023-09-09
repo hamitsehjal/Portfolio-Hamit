@@ -35,8 +35,8 @@ function Experience() {
         <div id="experience" className="mx-auto px-4 md:px-24 lg:px-40">
             <h2 className="text-4xl font-semibold text-center text-gray-700">EXPERIENCE</h2>
             <Timeline>
-                {experienceList.map((work) => (
-                    <Timeline.Item>
+                {experienceList.map((work, index) => (
+                    <Timeline.Item key={index}>
                         <Timeline.Point icon={HiCalendar} />
                         <Timeline.Content>
                             <Timeline.Time>{work.time}</Timeline.Time>
@@ -45,8 +45,8 @@ function Experience() {
                             </Timeline.Title>
                             <Timeline.Body>
                                 <ul className="list-disc list-inside">
-                                    {work.description.map((detail) => (
-                                        <li className="mb-2 ">
+                                    {work.description.map((detail, index) => (
+                                        <li key={index} className="mb-2 ">
                                             {detail}
                                         </li>
 

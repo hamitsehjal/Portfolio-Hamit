@@ -67,19 +67,6 @@ const About = () => {
                   }
                 </ul>
               </div>
-              {/* <Card className="w-full mb-2 items-start">
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 capitalize">
-              <p>{item}</p>
-            </h5>
-            <ul className="flex">
-              {
-                skillsList[item].map((skill, index) => (
-                  <li className="mr-4" key={index}>{skill}</li>
-                ))
-              }
-            </ul>
-          </Card> */}
-              {/* </ul> */}
 
             </div>
           ))

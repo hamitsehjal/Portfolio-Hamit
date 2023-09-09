@@ -8,6 +8,21 @@ import React from "react";
 import { Button, Navbar } from "flowbite-react";
 import image from "../images/logo.png";
 const Header = () => {
+  const onButtonClick = () => {
+    fetch('https://onedrive.live.com/?authkey=%21AFEmTY3tLmSb5T4&id=2BE84FBC5DDBCC9B%211170044&cid=2BE84FBC5DDBCC9B&parId=root&parQt=sharedby&o=OneUp').then(response => {
+      response.blob().then(blob => {
+        // Creating new object of PDF file 
+        const fileURL = window.URL.createObjectURL(blob);
+
+        // Setting various property values
+        let alink = document.createElement('a');
+        alink.href = fileURL;
+        alink.download = 'HamitSehjal.pdf'
+        alink.click();
+      })
+    })
+  }
+
   return (
     <Navbar fluid rounded className="bg-white shadow-lg px-4 z-5">
       <Navbar.Brand href="#home">
@@ -18,7 +33,7 @@ const Header = () => {
         />
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button>Resume</Button>
+        <Button onClick={onButtonClick} >Resume</Button>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
