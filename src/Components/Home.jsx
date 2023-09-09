@@ -24,24 +24,25 @@ import image from "../images/programmer.gif";
 const imageAltText = "Guy with Laptop and Coffee";
 const Home = ({ name, title }) => {
   return (
-    <div className="w-screen h-screen">
-      <div className="container mx-auto flex p-3 items-center justify-center flex-col md:flex-row">
-        <div className="text-center lg:w-5/12 w-full text-black">
-          <p className="text-2xl">
-            Hi, my name is <span className="text-3xl underline">{name}</span>.
-          </p>
-          <h1 className="mt-4 mb-8 text-5xl">I&apos;m a {title}</h1>
-          <div className="flex justify-center mx-auto">
-            <Button color="success" size="xl" pill href="#projects" className="mx-2">
-              View Projects
-            </Button>
-            <Button color="failure" size="xl" pill href="contact" className="mx-2">
-              Get in Touch
-            </Button>
-          </div>
+    <div className="container mx-auto flex p-3 items-center justify-center flex-col md:flex-row">
+      <div className="text-center lg:w-5/12 w-full text-black">
+        <p className="text-2xl">
+          Hi, my name is <span className="text-3xl underline">{name}</span>.
+        </p>
+        <h1 className="mt-4 mb-8 text-5xl">I&apos;m a {title}</h1>
+        <p className="text-sm">
+          Student at Seneca PolyTechnic; Currently interning as Software Developer at TDSB; <span className="text-lg">Graduating in April 2024</span>
+        </p>
+        <div className="flex justify-center mx-auto mt-2">
+          <Button color="success" size="xl" pill href="#projects" className="mx-2">
+            PROJECTS
+          </Button>
+          <Button color="failure" size="xl" pill href="#experience" className="mx-2">
+            EXPERIENCE
+          </Button>
         </div>
-        <img className="md:w-3/6 w-5/6 object-cover object-center" alt={imageAltText} src={image} />
       </div>
+      <img className="md:w-3/6 w-5/6 object-cover object-center" alt={imageAltText} src={image} />
     </div>
   );
 };
