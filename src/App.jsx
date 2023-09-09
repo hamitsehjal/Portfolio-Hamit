@@ -7,11 +7,11 @@
 import React from "react";
 
 import About from "./Components/About";
-import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 import Experience from "./Components/Experience";
+import Footer from "./Components/Footer";
 
 
 const siteProps = {
@@ -19,15 +19,11 @@ const siteProps = {
   title: "Software Engineer",
   email: "hamitsehjal26@gmail.com",
   gitHub: "hamitsehjal",
-  instagram: "hamit_sehjal/",
   linkedIn: "hamitsehjal",
-  medium: "",
+  medium: "hamitsehjal26",
   twitter: "SehjalHamit",
-  youTube: "",
 };
 
-const primaryColor = "#4E567E";
-const secondaryColor = "#D2F1E4";
 
 const App = () => {
   return (
@@ -37,7 +33,7 @@ const App = () => {
       <About />
       <Experience />
       <Portfolio />
-      <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+      <Footer {...siteProps} />
     </div>
   );
 };

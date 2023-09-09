@@ -1,141 +1,72 @@
-/**
- * Footer component
- *
- * Displays avenues to contact you.
- * Contact information is passed in from the App component that
- * renders the Footer.
- *
- * If a social value has an empty string it will not be displayed.
- */
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import { Footer } from 'flowbite-react'
+import { BsLinkedin, BsGithub, BsTwitter, BsMedium } from 'react-icons/bs'
+import { CgMail } from 'react-icons/cg';
 
-import devDotToIcon from "../images/socials/devdotto.svg";
-import envelopeIcon from "../images/socials/envelope.svg";
-import gitHubIcon from "../images/socials/github.svg";
-import instagramIcon from "../images/socials/instagram.svg";
-import linkedInIcon from "../images/socials/linkedin.svg";
-import mediumIcon from "../images/socials/medium.svg";
-import twitterIcon from "../images/socials/twitter.svg";
-import youTubeIcon from "../images/socials/youtube.svg";
+import image from '../images/logo.png'
+function FooterNew(props) {
+    const {
+        email,
+        gitHub,
+        linkedIn,
+        medium,
+        name,
+        twitter
+    } = props;
+    return (
+        <div className="container mx-auto mt-10 text-center" id="contact">
 
-/**
- * 💡 Learning resources
- *
- *  HTML hyperlinks: https://www.w3schools.com/html/html_links.asp
- *  Opening links in new tabs: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/
- */
+            <Footer className='flex flex-wrap p-4'>
 
-const Footer = (props) => {
-  const {
-    devDotTo,
-    email,
-    gitHub,
-    instagram,
-    linkedIn,
-    medium,
-    name,
-    primaryColor,
-    twitter,
-    youTube,
-  } = props;
+                <Footer.Divider />
+                <div className="w-full sm:flex sm:items-center sm:justify-between">
+                    <Footer.Copyright
+                        by={name}
+                        href='#'
+                        year={2023}
+                    />
+                    <Footer.Brand
+                        alt='my-logo'
+                        href='#'
+                        name='Hamit Sehjal'
+                        src={image}
+                    />
+                    <div className='mt-4 flex space-x-6 sm:mt-0 sm:justify-center'>
 
-  return (
-    <div
-      id="footer"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "2.5rem",
-        padding: "5rem 0 3rem",
-        backgroundColor: primaryColor,
-        width: "100vw"
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2.5rem",
-        }}
-      >
-        {email && (
-          <a href={`mailto:${email}`}>
-            <img src={envelopeIcon} alt="email" className="socialIcon" />
-          </a>
-        )}
-        {devDotTo && (
-          <a href={`https://dev.to/${devDotTo}`} target="_blank" rel="noopener noreferrer">
-            <img src={devDotToIcon} alt="Dev.to" className="socialIcon" />
-          </a>
-        )}
-        {gitHub && (
-          <a href={`https://github.com/${gitHub}`} target="_blank" rel="noopener noreferrer">
-            <img src={gitHubIcon} alt="GitHub" className="socialIcon" />
-          </a>
-        )}
-        {instagram && (
-          <a
-            href={`https://www.instagram.com/${instagram}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={instagramIcon} alt="Instagram" className="socialIcon" />
-          </a>
-        )}
-        {linkedIn && (
-          <a
-            href={`https://www.linkedin.com/in/${linkedIn}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={linkedInIcon} alt="LinkedIn" className="socialIcon" />
-          </a>
-        )}
-        {medium && (
-          <a href={`https://medium.com/@${medium}`} target="_blank" rel="noopener noreferrer">
-            <img src={mediumIcon} alt="Medium" className="socialIcon" />
-          </a>
-        )}
-        {twitter && (
-          <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
-            <img src={twitterIcon} alt="Twitter" className="socialIcon" />
-          </a>
-        )}
-        {youTube && (
-          <a
-            href={`https://www.youtube.com/c/${youTube}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={youTubeIcon} alt="YouTube" className="socialIcon" />
-          </a>
-        )}
-      </div>
-      <p className="small" style={{ marginTop: 0, color: "white" }}>
-        Created by {name}
-      </p>
-    </div>
-  );
-};
+                        <Footer.Icon
+                            href={`mailto:${email}`}
+                            icon={CgMail}
+                        />
+                        <Footer.Icon
+                            href={`https://twitter.com/${twitter}`} target='_blank' rel='noopener noreferrer'
+                            icon={BsTwitter}
+                        />
+                        <Footer.Icon
+                            href={`https://www.linkedin.com/in/${linkedIn}`}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            icon={BsLinkedin}
+                        />
+                        <Footer.Icon
+                            href={`https://github.com/${gitHub}`}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            icon={BsGithub}
+                            className='text-lg'
+                        />
+                        <Footer.Icon
+                            href={`https://medium.com/@${medium}`}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            icon={BsMedium}
+                        />
 
-Footer.defaultProps = {
-  name: "",
-};
+                    </div>
+                </div>
 
-Footer.propTypes = {
-  devDotTo: PropTypes.string,
-  email: PropTypes.string,
-  gitHub: PropTypes.string,
-  instagram: PropTypes.string,
-  linkedIn: PropTypes.string,
-  medium: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  primaryColor: PropTypes.string,
-  twitter: PropTypes.string,
-  youTube: PropTypes.string,
+            </Footer>
+        </div>
+    )
+}
 
-};
-
-export default Footer;
+export default FooterNew

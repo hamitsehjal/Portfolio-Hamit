@@ -53,24 +53,32 @@ const About = () => {
 
     <div className="container mx-auto mt-10 text-center" id="about">
       <h2 className="text-4xl font-semibold text-center text-gray-700">SKILLS</h2>
-      <div className="flex flex-wrap flex-col items-center justify-center m-2">
+      <div className="flex flex-wrap flex-col items-center justify-center m-2 p-4">
         {
           Object.keys(skillsList).map((item) => (
             <div key={item}>
-
-              {/* <ul className="grid grid-cols-2 text-xl m-12 gap-2 text-center"> */}
-              <Card className="w-full mb-2 items-start">
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 capitalize">
-                  <p>{item}</p>
-                </h5>
-                <ul className="flex">
+              <div className="inline-flex flex-wrap">
+                <span className="text-2xl font-semibold tracking-tight text-gray-900 capitalize mr-4">{item}:</span>
+                <ul className="list-none inline-flex flex-wrap items-center justify-center">
                   {
                     skillsList[item].map((skill, index) => (
                       <li className="mr-4" key={index}>{skill}</li>
                     ))
                   }
                 </ul>
-              </Card>
+              </div>
+              {/* <Card className="w-full mb-2 items-start">
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 capitalize">
+              <p>{item}</p>
+            </h5>
+            <ul className="flex">
+              {
+                skillsList[item].map((skill, index) => (
+                  <li className="mr-4" key={index}>{skill}</li>
+                ))
+              }
+            </ul>
+          </Card> */}
               {/* </ul> */}
 
             </div>
