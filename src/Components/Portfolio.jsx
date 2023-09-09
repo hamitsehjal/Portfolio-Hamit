@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Button, Card } from "flowbite-react";
 /**
  * Project list
  *
@@ -28,7 +28,7 @@ const projectList = [
   {
     title: "Utility Bill Calculator",
     description:
-      "A cross-platform mobile application using Microsoft Xamarin for calculating utility bills.",
+      "A cross-platform mobile application for calculating utility bills based on different range of parameters",
     url: "https://github.com/hamitsehjal/Utility-Bill-Calculator",
   },
 ];
@@ -36,25 +36,19 @@ const projectList = [
 const Portfolio = () => {
   return (
     <div className="container mx-auto text-center">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div className="flex flex-wrap items-center justify-center">
+      <h2 className="text-4xl font-semibold text-center text-gray-700">PROJECTS</h2>
+
+      <div className="flex flex-wrap items-center justify-center m-2">
         {projectList.map((project) => (
-          <div
-            className="max-w-sm p-6 m-2 bg-white border border-gray-200 rounded-lg shadow"
-            key={project.title}
-          >
-            <a href={project.url}>
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                {project.title}
-              </h5>
-            </a>
-            <p className="mb-3 font-normal text-gray-700">{project.description}</p>
-            <a
-              href={project.url}
-              className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4
-           focus:outline-none focus:ring-blue-300"
-            >
-              Read More
+          <Card className="max-w-sm m-2" key={project.title}>
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <p>{project.title}</p>
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              <p>{project.description}</p>
+            </p>
+            <Button href={project.url}>
+              <p>Read more</p>
               <svg
                 className="w-3.5 h-3.5 ml-2"
                 aria-hidden="true"
@@ -70,8 +64,8 @@ const Portfolio = () => {
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
-            </a>
-          </div>
+            </Button>
+          </Card>
         ))}
       </div>
     </div>
