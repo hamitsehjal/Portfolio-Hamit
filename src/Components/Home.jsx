@@ -7,7 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-
+import { Button } from "flowbite-react";
 /**
  * Home background image
  *
@@ -19,32 +19,28 @@ import PropTypes from "prop-types";
  * Need an image? Check out https://unsplash.com to download a photo you
  * freely use on your site.
  */
-import image from "../images/Homepage.jpg";
+import image from "../images/programmer.gif";
 
-const imageAltText =
-  "Adult female in office setting leaning against a glass wall while holding a platinum Microsoft Surface Pro 7 in tablet mode preparing to write with Microsoft Surface Pen";
-
+const imageAltText = "Guy with Laptop and Coffee";
 const Home = ({ name, title }) => {
   return (
-    <div className="w-screen h-screen text-white">
-      <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-        <img
-          className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center"
-          alt={imageAltText}
-          src={image}
-        />
+    <div className="w-screen h-screen">
+      <div className="container mx-auto flex p-3 items-center justify-center flex-col md:flex-row">
         <div className="text-center lg:w-5/12 w-full text-black">
-          <p className="text-2xl mb-8">Hi, my name is {name}.</p>
-          <h1 className="my-4 text-5xl font-bold leading-tight ">I&apos;m a {title}</h1>
+          <p className="text-2xl">
+            Hi, my name is <span className="text-3xl underline">{name}</span>.
+          </p>
+          <h1 className="mt-4 mb-8 text-5xl">I&apos;m a {title}</h1>
           <div className="flex justify-center mx-auto">
-            <button className="hover:underline bg-white text-gray-800 font-bold border rounded-full py-4 px-8">
+            <Button color="success" size="xl" pill href="#projects" className="mx-2">
               View Projects
-            </button>
-            <button className="ml-4 hover:underline bg-white text-gray-800 font-bold  border rounded-full py-4 px-8">
+            </Button>
+            <Button color="failure" size="xl" pill href="contact" className="mx-2">
               Get in Touch
-            </button>
+            </Button>
           </div>
         </div>
+        <img className="md:w-3/6 w-5/6 object-cover object-center" alt={imageAltText} src={image} />
       </div>
     </div>
   );
