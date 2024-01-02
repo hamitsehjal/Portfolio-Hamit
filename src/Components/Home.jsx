@@ -7,54 +7,75 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { Button } from "flowbite-react";
-/**
- * Home background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that
- * represents what you see in that image.
- *
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
-import image from "../images/programmer.gif";
 
-const imageAltText = "Guy with Laptop and Coffee";
-const Home = ({ name, title }) => {
+
+const Home = ({ name, writings, projects }) => {
   return (
-    <div className="container mx-auto flex p-3 items-center justify-center flex-col md:flex-row">
-      <div className="text-center lg:w-5/12 w-full text-black">
-        <p className="text-2xl">
-          Hi, my name is <span className="text-3xl underline">{name}</span>.
-        </p>
-        <h1 className="mt-4 mb-8 text-5xl">I&apos;m a {title}</h1>
-        <p className="text-sm">
-          Student at Seneca PolyTechnic; Currently interning as Software Developer at TDSB; <span className="text-lg">Graduating in April 2024</span>
-        </p>
-        <div className="flex justify-center mx-auto mt-2">
-          <Button color="success" size="xl" pill href="#projects" className="mx-2">
-            PROJECTS
-          </Button>
-          <Button color="failure" size="xl" pill href="#experience" className="mx-2">
-            EXPERIENCE
-          </Button>
+    <div className=" m-auto p-5 block  lg:mb-28 lg:ml-28">
+
+      <div className="lg:w-1/2 ">
+        {/* title */}
+        <div className="mt-5 mb-10 text-2xl font-bold font-sans">
+          {name}
+        </div>
+
+        {/* Bio */}
+        <div className="mb-8">
+          <p>Student at <a className="underline text-blue-900 " href="https://www.senecapolytechnic.ca/home.html" target="_blank">Seneca Polytechnic</a>, pursuing Computer Science. Previously, I interned at the <a className="underline text-blue-900 " href="www.tdsb.on.ca" target="_blank">TDSB</a> as a <span className="text-lg">Software Developer</span> in the Web Communications Department and at <a className="underline text-blue-900 " href="https://library.senecapolytechnic.ca/learningcentre" target="_blank">Learning Centre Seneca</a>  as a Teaching Assistant. I currently reside in Toronto, Canada.</p>
+          <br />
+          <br />
+          <p>I'm interested in the internet, books, cities, lifting, and soccer. Currently, learning  <span className="text-lg">ios Development</span> and <span className="text-lg">Deep Learning </span></p>
         </div>
       </div>
-      <img className="md:w-3/6 w-5/6 object-cover object-center" alt={imageAltText} src={image} />
-    </div>
+      {/* Writing */}
+      <div className="mb-8">
+        <p className="mt-5 mb-7 text-lg font-bold font-sans">Writings</p>
+        <ul>
+          {writings.map((blog, index) => (
+            <li key={index}>< a className="underline text-blue-900 " href={blog.url}>{blog.title}</a></li>
+          ))}
+
+        </ul>
+        <br />
+        <p className="italic text-sm">I am in process of migrating my blogs from Hashnode to my site. If interested, you can checkout my < a className="underline text-blue-900 " href="https://hamitsehjal.hashnode.dev/">Hashnode</a> for more writings.</p>
+      </div>
+
+      {/* Projects */}
+
+      <div className="mb-8">
+        <p className="mt-5 mb-7 text-lg font-bold font-sans">Things I have Built</p>
+        <ul>
+          {projects.map((project, index) => (
+            <li key={index}>< a className="underline text-blue-900 " href={project.url}>{project.title}</a>: {project.description}</li>
+          ))}
+
+        </ul>
+      </div>
+      {/* contact/other */}
+
+      <div className="mb-8">
+        <p className="mt-5 mb-7 text-lg font-bold font-sans">Contact/Other Stuff</p>
+        <p><a className="underline text-blue-900 " href="https://twitter.com/SehjalHamit">Twitter, </a><a className="underline text-blue-900 " href="https://github.com/hamitsehjal/">GitHub, </a><a className="underline text-blue-900 " href="https://www.linkedin.com/in/hamitsehjal/">LinkedIn </a></p>
+        <p>Email: <a className=" text-blue-900" href="mailto:hamitsehjal26@gmail.com">hamitsehjal26@gmail.com</a></p>
+      </div>
+    </div >
+
   );
 };
 
 Home.defaultProps = {
   name: "",
-  title: "",
+  writings: [],
 };
 
 Home.propTypes = {
   name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  writings: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Home;

@@ -22,18 +22,55 @@ const siteProps = {
   linkedIn: "hamitsehjal",
   medium: "hamitsehjal26",
   twitter: "SehjalHamit",
+  writings: [
+    {
+      title: "Understanding localStorage vs. sessionStorage",
+      url: "https://hamitsehjal.hashnode.dev/understanding-localstorage-vs-sessionstorage-browser-storage-api"
+    },
+    {
+      title: "Understanding logarithmic time complexity O(log n)",
+      url: "https://hamitsehjal.hashnode.dev/why-are-algorithms-with-logarithmic-time-complexity-olog-n-considered-incredibly-efficient-especially-for-large-input-sizes"
+    },
+    {
+      title: "Random Numbers Java",
+      url: "https://hamitsehjal.hashnode.dev/how-to-generate-random-numbers-in-java"
+    },
+
+  ],
+  projects: [
+    {
+      title: "CampusCart",
+      description: "A Grocery Delivery Application",
+      url: "https://campus-cart.vercel.app/",
+    },
+    {
+      title: "Fragments",
+      description: "A cloud-based microservice, enabling enterprises to perform CRUD operations for text and image fragments",
+      url: "https://fragments555.vercel.app/",
+    },
+    {
+      title: "Show Bizz II",
+      description: "Application for television industry companies to efficiently manage actors, TV series, and episodes",
+      url: "https://campus-cart.vercel.app/",
+    },
+    {
+      title: "MET Museum",
+      description: "A Web Application that lets users explore the Metropolitan Art Museum's art collections from anywhere",
+      url: "https://met-museum-422.vercel.app/",
+    },
+  ],
 };
 
 
 const App = () => {
   return (
     <div id="main">
-      <Header />
-      <Home name={siteProps.name} title={siteProps.title} />
-      <About />
+      {/* <Header /> */}
+      <Home name={siteProps.name} writings={siteProps.writings} projects={siteProps.projects} />
+      {/* <About />
       <Experience />
       <Portfolio />
-      <Footer {...siteProps} />
+      <Footer {...siteProps} /> */}
     </div>
   );
 };
