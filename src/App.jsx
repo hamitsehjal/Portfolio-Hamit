@@ -24,6 +24,10 @@ const siteProps = {
   twitter: "SehjalHamit",
   writings: [
     {
+      title: "How can one find happiness?? - (Twitter Thread💈)",
+      url: "https://twitter.com/SehjalHamit/status/1741177988593398027"
+    },
+    {
       title: "Understanding localStorage vs. sessionStorage",
       url: "https://hamitsehjal.hashnode.dev/understanding-localstorage-vs-sessionstorage-browser-storage-api"
     },

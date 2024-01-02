@@ -32,7 +32,7 @@ const Home = ({ name, writings, projects }) => {
         <p className="mt-5 mb-7 text-lg font-bold font-sans">Writings</p>
         <ul>
           {writings.map((blog, index) => (
-            <li key={index}>< a className="underline text-blue-900 " href={blog.url}>{blog.title}</a></li>
+            <li key={index}>< a className="underline text-blue-900 " href={blog.url} target="_blank">{blog.title}</a></li>
           ))}
 
         </ul>
@@ -43,10 +43,10 @@ const Home = ({ name, writings, projects }) => {
       {/* Projects */}
 
       <div className="mb-8">
-        <p className="mt-5 mb-7 text-lg font-bold font-sans">Things I have Built</p>
+        <p className="mt-5 mb-7 text-lg font-bold font-sans">Projects</p>
         <ul>
           {projects.map((project, index) => (
-            <li key={index}>< a className="underline text-blue-900 " href={project.url}>{project.title}</a>: {project.description}</li>
+            <li key={index}>< a className="underline text-blue-900 " href={project.url} target="_blank">{project.title}</a>: {project.description}</li>
           ))}
 
         </ul>
