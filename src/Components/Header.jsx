@@ -32,10 +32,10 @@ const Header = () => {
           className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-22 xl:h-22"
         />
       </Navbar.Brand>
-      <div className="flex md:order-2">
+      {/* <div className="flex md:ord/er-2">
         <Button onClick={onButtonClick} >Resume</Button>
         <Navbar.Toggle />
-      </div>
+      </div> */}
       <Navbar.Collapse>
         <Navbar.Link active href="#home" className="md:text-lg">
           Home

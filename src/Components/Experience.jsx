@@ -4,16 +4,24 @@ import { HiCalendar } from "react-icons/hi";
 
 const experienceList = [
     {
-        title: "Software Developer Intern (Co-op), Toronto District School Board",
+        title: "Seneca Housing Hackathon, Software Developer ",
         time: "Aug 2023 - Present",
         description: [
-            "Facilitated accessibility-driven website development and maintenance across three domains, www.tdsb.on.ca, www.schoolweb.tdsb.on.ca, and tdsbweb.tdsb.on.ca",
-            "Worked on accessibility enhancements across above mentioned domains, resulting in a tangible 20% increase in user engagement and a notable surge in positive user feedback regarding improved site usability",
-            "Managed TDSB's CMS, seamlessly migrating independent school sites under the TDSB umbrella to enhance security, site reachability, and overall performance"
+            "Developing a registration module from scratch as a superior alternative to Eventbrite.",
+            "Integrating an E-Commerce Store into the official site to boost Hackathon fundraising.",
+        ],
+    },
+    {
+        title: "Toronto District School Board, Software Developer Intern (Co-op) ",
+        time: "Aug 2023 - Present",
+        description: [
+            "Developed a new feature for managing the discount promos in the Employee Portal, triggering a 15% spike in positive user feedback regarding improved site usability.",
+            "Enhanced website accessibility across two key domains, driving a tangible 20% surge in user engagement.",
+            "Managed TDSB's CMS, orchestrating the migration of independent school sites under the TDSB umbrella. This initiative bolstered security, site reachability, and overall performance."
         ],
     }, {
 
-        title: "SLG Leader and Peer Tutor (Part-time), Seneca Polytechnic",
+        title: "Seneca Polytechnic, Teaching Assistant (Part-time), ",
         time: "Jan 2023 - Aug 2023",
         description: [
             "Continued role as SLG Leader, while also mentoring and training new team members, ensuring seamless knowledge transfer and maintaining quality standards."
@@ -21,7 +29,7 @@ const experienceList = [
 
     },
     {
-        title: "Supported Learning Group Leader (Co-op), Seneca Polytechnic",
+        title: "Seneca Polytechnic, Teaching Assistant (Co-op)",
         time: "Sep 2022 - Dec 2022",
         description: [
             "Designed interactive C/C++ labs, boosting exam scores by 35% through hands-on teaching and thorough code reviews.",
